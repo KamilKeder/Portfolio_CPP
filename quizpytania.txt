@@ -1,0 +1,12 @@
+Ile to jest 2+2*2?
+6
+8
+12
+W którym roku byla Bitwa pod Grunwaldem?
+1916
+1410
+1112
+Co jest stolica Polski?
+Krakow
+Gniezno
+Warszawa
