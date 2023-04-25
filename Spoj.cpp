@@ -1,9 +1,10 @@
 ﻿#include "Spoj.h"
 #include <iostream>
 #include <conio.h>
+#include <string>
 using namespace std;
-int liczbarozwiazan = 5, wybor_spoj;
-void menu();
+int liczbarozwiazan = 10, wybor_spoj;
+void menu(), ZabawaneDodawaniePiotrusiaSprawdzenie(string liczba, int zmienna1, int liczba_zmian);
 void Liczby_Pierwsze() {
     int n, sprawdzana;
     system("cls");
@@ -359,6 +360,125 @@ void Tablice() {
     _getch();
     Spoj_Lista();
 }
+void ZabawneDodawaniePiotrusia() {
+    system("cls");
+    cout << "Wpisz 0 aby wyjsc z aplikacji." << endl << endl;
+    cout << "Sphere Online Judge" << endl << "---------------------" << endl;
+    cout << "Zabawne Dodawanie Piotrusia." << endl << "---------------------" << endl;
+    cout << "Twoim zadaniem jest napisać program, który dla każdej liczby rozważanej przez Piotrusia wypisze palindrom (wynik obliczeń Piotrusia), oraz liczbę dodawań prowadzących do wyniku." << endl;
+    cout << "---------------------" << endl;
+    cout << "Input" << endl;
+    cout << "Pierwsza linia wejścia zawiera liczbę t (t <= 80), określającą ile liczb znajduje się na kartce Piotrusia. Każda z następnych t linii zawiera dokładnie jedną liczbę naturalną n (1 <= n <= 80), dla której Piotruś musi wykonać obliczenia." << endl;
+    cout << "---------------------" << endl;
+    cout << "Output" << endl;
+    cout << "Dla kolejnych liczb podanych na kartce wypisz po jednej linijce zawierającej dwie liczby całkowite oddzielone spacją. Pierwsza oznacza palindrom otrzymany przez Piotrusia, druga -- liczbę dodawań wykonanych, by go otrzymać." << endl << "---------------------" << endl;
+    int ilosc;
+    cout << "Podaj ile zestawów chcesz sprawdzić: ";
+    cin >> ilosc;
+    for (int sprawdzana = 0; sprawdzana < ilosc; sprawdzana++) {
+        string liczba;
+        cout << "---------------------" << endl << "Zestaw " << sprawdzana+1 << " Podaj Liczbę: ";
+        cin >> liczba;
+        int zmienna1 = 0;
+        int liczba_zmian = 0;
+        ZabawaneDodawaniePiotrusiaSprawdzenie(liczba, zmienna1, liczba_zmian);
+    }
+    cout << "---------------------" << endl;
+    cout << endl << "Nacisnij Enter aby przejsc dalej." << endl;
+    _getch();
+    Spoj_Lista();
+}
+void ZabawaneDodawaniePiotrusiaSprawdzenie(string liczba, int zmienna1, int liczba_zmian) {
+    int zmienna = 0;
+    for (int i = 0; i < liczba.length(); i++) {
+        if (liczba[i] != liczba[liczba.length() - (i + 1)]) {
+            zmienna++;
+        }
+    }
+    if (zmienna > 0) {
+        string temp, temp1;
+        for (int i = 0; i <= liczba.length(); i++)
+        {
+            temp += liczba[i];
+            if (liczba[liczba.length() - i] != 0) {
+                temp1 += liczba[liczba.length() - i];
+            }
+        }
+        liczba = to_string(stoi(temp) + stoi(temp1));
+        cout << "Obliczenie: " << temp << " + " << temp1 << " = " << to_string(stoi(temp) + stoi(temp1)) << endl;
+        liczba_zmian++;
+        ZabawaneDodawaniePiotrusiaSprawdzenie(liczba, zmienna1, liczba_zmian);
+    }
+    else {
+        cout << "Palindrom: " << liczba << " Liczba obliczeń: " << liczba_zmian << endl;
+    }
+}
+void NWD() {
+    system("cls");
+    cout << "Wpisz 0 aby wyjsc z aplikacji." << endl << endl;
+    cout << "Sphere Online Judge" << endl << "---------------------" << endl;
+    cout << "NWD." << endl << "---------------------" << endl;
+    cout << "Napisz funkcję: int nwd(int a, int b); która oblicza największy wspólny dzielnik liczb a i b, 0 <= a,b <= 1000000." << endl;
+    cout << "---------------------" << endl;
+    cout << "Input" << endl;
+    cout << "W pierwszej linii liczba testów t, w kolejnych liniach po dwie liczby w każdym wierszu." << endl;
+    cout << "---------------------" << endl;
+    cout << "Output" << endl;
+    cout << "W każdej linii jedna liczba - wynik działania funkcji nwd." << endl << "---------------------" << endl;
+    cout << "Podaj ile zestawów chcesz sprawdzić: ";
+    int ile;
+    cin >> ile;
+    for (int sprawdzana = 0; sprawdzana < ile; sprawdzana++) {
+        int a, b, c = 2, d = 0, d1 = 0, aa = 1;
+        int wynik = 1;
+        cout << "---------------------" << endl << "Zestaw " << sprawdzana + 1 << endl;
+        cout << "Podaj Liczbę a: ";
+        cin >> a;
+        cout << "Podaj Liczbę b: ";
+        cin >> b;
+        int* tablica = new int[a];
+        int* tablica1 = new int[b];
+        int reszta1 = a, reszta2 = b;
+        while (reszta1 != 1) {
+            if (reszta1 % c == 0) {
+                reszta1 = reszta1 / c;
+                tablica[d] = c;
+                d++;
+            }
+            else {
+                c++;
+            }
+        }
+        c = 2;
+        while (reszta2 != 1) {
+            if (reszta2 % c == 0) {
+                reszta2 = reszta2 / c;
+                tablica1[d1] = c;
+                d1++;
+            }
+            else {
+                c++;
+            }
+        }
+        for (int i = 0; i < d; i++) {
+            for (int i1 = 0; i1 < d1; i1++) {
+                if (tablica[i] == tablica1[i1]) {
+                    wynik = wynik * tablica[i];
+                    tablica1[i1] = 0;
+                    break;
+                }
+            }
+        }
+        delete[] tablica;
+        delete[] tablica1;
+        cout << "NWD liczb " << a << " oraz " << b << " = " << wynik << endl;
+
+    }
+    cout << "---------------------" << endl;
+    cout << endl << "Nacisnij Enter aby przejsc dalej." << endl;
+    _getch();
+    Spoj_Lista();
+}
 void Spoj_Lista() {
     system("cls");
     cout << "Wpisz 0 aby wyjsc z aplikacji." << endl << endl;
@@ -373,6 +493,8 @@ void Spoj_Lista() {
     cout << "6. Zadanie Próbne." << endl;
     cout << "7. Prędkość Średnia." << endl;
     cout << "8. Tablice." << endl;
+    cout << "9. Zabawne Dodawanie Piotrusia." << endl;
+    cout << "10. NWD." << endl;
     cout << endl << "Wybór: "; wybor_spoj = _getch();
     if (wybor_spoj == '1') {
         Liczby_Pierwsze();
@@ -404,6 +526,14 @@ void Spoj_Lista() {
     }
     if (wybor_spoj == '8') {
         Tablice();
+        _getch();
+    }
+    if (wybor_spoj == '9') {
+        ZabawneDodawaniePiotrusia();
+        _getch();
+    }
+    if (wybor_spoj == '10') {
+        NWD();
         _getch();
     }
     if (wybor_spoj == 0) {
