@@ -29,7 +29,7 @@ void Quiz() {
     }
     system("cls");
     cout << "Nieprawidlowy wybor, sprobuj ponownie." << endl;
-    cout << endl << "Nacisnij Enter aby przejsc dalej." << endl; getchar(); getchar();
+    cout << endl << "Nacisnij Enter aby przejsc dalej." << endl; _getch();
     Quiz();
 }
 void quizstart() {
@@ -68,7 +68,7 @@ void quizstart() {
     }
     system("cls");
     cout << "Nieprawidlowy wybor, sprobuj ponownie." << endl;
-    cout << endl << "Nacisnij Enter aby przejsc dalej." << endl; getchar(); getchar();
+    cout << endl << "Nacisnij Enter aby przejsc dalej." << endl; _getch();
     quizstart();
 }
 void pytanie2() {
@@ -108,7 +108,7 @@ void pytanie2() {
     }
     system("cls");
     cout << "Nieprawidlowy wybor, sprobuj ponownie." << endl;
-    cout << endl << "Nacisnij Enter aby przejsc dalej." << endl; getchar(); getchar();
+    cout << endl << "Nacisnij Enter aby przejsc dalej." << endl; _getch();
     pytanie2();
 
 }
@@ -143,19 +143,19 @@ void pytanie3() {
         wynikquiz++;
         system("cls");
         cout << "Koniec quizu, twoj wynik wynosi: " << wynikquiz << endl;
-        cout << endl << "Nacisnij Enter aby przejsc dalej." << endl; getchar(); getchar();
+        cout << endl << "Nacisnij Enter aby przejsc dalej." << endl; _getch();
         Quiz();
         break;
     case '2':case '1':
         system("cls");
         cout << "Koniec quizu, twoj wynik wynosi: " << wynikquiz << endl;
-        cout << endl << "Nacisnij Enter aby przejsc dalej." << endl; getchar(); getchar();
+        cout << endl << "Nacisnij Enter aby przejsc dalej." << endl; _getch();
         Quiz();
         break;
     }
     system("cls");
     cout << "Nieprawidlowy wybor, sprobuj ponownie." << endl;
-    cout << endl << "Nacisnij Enter aby przejsc dalej." << endl; getchar(); getchar();
+    cout << endl << "Nacisnij Enter aby przejsc dalej." << endl; _getch();
     pytanie3();
 
 

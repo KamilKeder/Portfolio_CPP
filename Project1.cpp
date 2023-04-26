@@ -14,10 +14,11 @@
 #include "ProgramLogowanie.h"
 #include "ProgramZwierzeta.h"
 #include "ProgramSprawdzKolizje.h"
+#include "Bazadanych.h"
 #include "Spoj.h"
 
 using namespace std;
-void menu(), MemoryGame();
+void menu();
 void menu() {
     system("cls");
     cout << "Wybierz aplikacje" << endl;
@@ -29,50 +30,59 @@ void menu() {
     cout << "6. Sortowanie" << endl;
     cout << "7. Zwierzęta" << endl;
     cout << "8. Sprawdzanie kolizji." << endl;
+    cout << "9. Polski SPOJ." << endl;
+    cout << "10. Baza Danych." << endl;
     cout << "0. Zakoncz" << endl;
     cout << endl;
-    int WybranaAplikacja = _getch();
+    string WybranaAplikacja;
+    cin >> WybranaAplikacja;
     system("cls");
-    switch (WybranaAplikacja) {
-    case '1':
+    if (WybranaAplikacja == "1") {
         ProgramKalkulator();
-        break;
-    case '2':
-        ProgramOdliczanie();
-        break;
-    case '3':
-        KolkoIKrzyzyk();
-        break;
-    case '4':
-        Clicker();
-        break;
-    case '5':
-        Quiz();
-        break;
-    case '6':
-        Sortowanie();
-        break;
-    case '7':
-        Zwierzeta();
-        break;
-    case '8':
-        ProgramSprawdzKolizje();
-        break;
-    case '0':
-        exit(0);
-        break;
     }
+    else if (WybranaAplikacja == "2") {
+        ProgramOdliczanie();
+    }
+    else if (WybranaAplikacja == "3") {
+        KolkoIKrzyzyk();
+    }
+    else if (WybranaAplikacja == "4") {
+        Clicker();
+    }
+    else if (WybranaAplikacja == "5") {
+        Quiz();
+    }
+    else if (WybranaAplikacja == "6") {
+        Sortowanie();
+    }
+    else if (WybranaAplikacja == "7") {
+        Zwierzeta();
+    }
+    else if (WybranaAplikacja == "8") {
+        ProgramSprawdzKolizje();
+    }
+    else if (WybranaAplikacja == "9") {
+        Spoj_Lista();
+    }
+    else if (WybranaAplikacja == "10") {
+        Bazadanych();
+    }
+    else if (WybranaAplikacja == "0") {
+        exit(0);
+    }
+    else {
         system("cls");
-        cout << "Nieprawidlowy wybor, sprobuj ponownie." << endl;
+        cout << "Nieprawidlłwy wybór, spróbuj ponownie." << endl;
         cout << endl << "Nacisnij Enter aby przejsc dalej." << endl;
         _getch();
         menu();
-    
-
+    }
 }
 
 int main(){
     setlocale(LC_CTYPE, "Polish");
+    ProgramKalkulator();
+    menu();
     Spoj_Lista();
     Logowanie();
 }

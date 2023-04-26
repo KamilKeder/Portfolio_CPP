@@ -1,1 +1,9 @@
 void Zwierzeta();
+void menu();
+void DodajZwierze();
+void UsunZwierze();
+void UsunWszystkieZwierzeta();
+void WyswietlZwierzeta();
+void ZapiszZwierzeta();
+void WczytajZwierzeta();
+void UsunZPliku();

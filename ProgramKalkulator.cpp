@@ -41,7 +41,7 @@ if (wybor == '1') {
     ProgramKalkulator();
 }
 else if (wybor == '2') {
-    cout << "Dzia³anie x - y "
+    cout << "Dzia³anie x - y "<< endl
         << "---------------------" << endl
         << "Podaj Liczbê x: " << endl << "Liczba x = ";
     cin >> x;
@@ -53,36 +53,37 @@ else if (wybor == '2') {
     ProgramKalkulator();
 }
 else if (wybor == '3') {
-    cout << "Dzia³anie x * y " << "---------------------" << endl
+    cout << "Dzia³anie x * y " <<endl<< "---------------------" << endl
         << "Podaj Liczbê x: " << endl << "Liczba x = ";
     cin >> x;
-    cout << "Podaj Liczbe y: " << endl << "Liczba y = ";
+    cout << "---------------------" << endl << "Podaj Liczbe y: " << endl << "Liczba y = ";
     cin >> y;
-    cout << "---------------------" << "Wynik mno¿enia" << x << " * " << y << " = " << x * y << endl << "---------------------" << endl << "Nacisnij Enter aby przejsc dalej." << endl; getchar(); getchar();
+    cout << "---------------------" <<endl << "Wynik mno¿enia " << x << " * " << y << " = " << x * y << endl << "---------------------" << endl << "Nacisnij Enter aby przejsc dalej." << endl; getchar(); getchar();
     ProgramKalkulator();
 
 }
 else if (wybor == '4') {
-    cout << "Dzia³anie x : y " << "---------------------" << endl << "Podaj Liczbê x: " << endl << "Liczba x = ";
+    cout << "Dzia³anie x : y "<<endl << "---------------------" << endl << "Podaj Liczbê x: " << endl << "Liczba x = ";
     cin >> x;
-    cout << "Podaj Liczbe y: " << "---------------------" << endl << "Podaj Liczbê y: " << endl << "Liczba y = ";;
+    cout << "---------------------" <<endl << "Podaj Liczbe y: " <<  endl << "Liczba y = ";
     cin >> y;
-    cout << "---------------------" << "Wynik dzielenia " << x << " : " << y << " = " << x / y << endl << "---------------------" <<
-        endl << "Naciœnij Enter aby przejœæ dalej." << endl; getchar(); getchar();
+    cout << "---------------------" << endl << "Wynik dzielenia " << x << " : " << y << " = " << x / y << endl << "---------------------" <<
+        endl << "Naciœnij Enter aby przejœæ dalej." << endl;
+    _getch(); 
     ProgramKalkulator();
 }
 else if (wybor == '5') {
-    cout << "Dzia³anie x^y " << "---------------------" << endl
+    cout << "Dzia³anie x^y " <<endl << "---------------------" << endl
         << "Podaj Liczbe x: " << endl << "Liczba x = ";
     cin >> x;
-    cout << "Podaj Liczbe y: " << endl << "Liczba y = ";
+    cout << "---------------------" << endl << "Podaj Liczbe y: " << endl << "Liczba y = ";
     cin >> y;
     cout << "---------------------" << endl << "Wynik potêgowania " << x << "^" << y << " = " << pow(x, y) << endl;
     cout << "---------------------" << endl << "Nacisnij Enter aby przejsc dalej." << endl; getchar(); getchar();
     ProgramKalkulator();
 }
 else if (wybor == '6') {
-    cout << "Dzialanie pierwiastek z x " << "---------------------" << endl
+    cout << "Dzialanie pierwiastek z x " <<endl << "---------------------" << endl
         << "Podaj Liczbê x: " << endl << "Liczba x = ";
     cin >> x;
     cout << "---------------------" << endl << "Wynik pierwiastka z x = " << x << " = " << sqrt(x) << endl;
@@ -95,7 +96,8 @@ else if (wybor == '0') {
 else {
     system("cls");
     cout << "Nieprawid³owy wybór." << endl << "---------------------"
-        << endl << "Nacisnij Enter aby przejsc dalej." << endl; getchar(); getchar();
+    << endl << "Nacisnij Enter aby powróciæ." << endl;
+    _getch();
     ProgramKalkulator();
 }
 }

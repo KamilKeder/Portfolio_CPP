@@ -16,6 +16,9 @@ class Zwierze
 public:
 	void dodawaniezwierzecia(string a, string b, int c);
 	void wyswietlaniezwierzecia();
-	
+
+	string getNazwa() const { return nazwa; }
+	string getRasa() const { return rasa; }
+	int getWiek() const { return wiek; }
 };
 

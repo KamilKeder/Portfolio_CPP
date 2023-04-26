@@ -43,7 +43,7 @@
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v143</PlatformToolset>
-    <CharacterSet>Unicode</CharacterSet>
+    <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
@@ -127,6 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Bazadanych.cpp" />
     <ClCompile Include="ObiektySprawdzane.cpp" />
     <ClCompile Include="ProgramClicker.cpp" />
     <ClCompile Include="ProgramKalkulator.cpp" />
@@ -142,6 +143,7 @@
     <ClCompile Include="Zwierze.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Bazadanych.h" />
     <ClInclude Include="ObiektySprawdzane.h" />
     <ClInclude Include="ProgramClicker.h" />
     <ClInclude Include="ProgramKalkulator.h" />
