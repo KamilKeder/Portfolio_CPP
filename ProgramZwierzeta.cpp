@@ -120,7 +120,7 @@ void UsunZwierze() {
         << "---------------------" << endl
         << "Wpisz numer zwierzêcia które chcesz usun¹æ." << endl
         << "Numer: "; cin >> numer_zwierzecia;
-        if (wybor == 0) {
+        if (numer_zwierzecia == 0) {
             Zwierzeta();
         }
     if (ilosczwierzat > 0) {
