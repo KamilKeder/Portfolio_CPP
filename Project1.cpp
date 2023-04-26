@@ -81,8 +81,5 @@ void menu() {
 
 int main(){
     setlocale(LC_CTYPE, "Polish");
-    ProgramKalkulator();
-    menu();
-    Spoj_Lista();
     Logowanie();
 }
